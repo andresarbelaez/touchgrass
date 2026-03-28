@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>touch grass</title>
+    <meta
+      name="description"
+      content="for people who build AI for a living — a moment outside the tab stack."
+    />
+    <meta property="og:title" content="touch grass" />
+    <meta
+      property="og:description"
+      content="for people who build AI for a living"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@9..144,400;9..144,500&family=Instrument+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <canvas id="meadow" aria-hidden="true"></canvas>
+
+    <main class="stage">
+      <h1 class="headline">touch grass</h1>
+      <p class="subline">for people who build AI for a living</p>
+    </main>
+
+    <button
+      type="button"
+      id="sound-toggle"
+      class="sound-toggle"
+      aria-pressed="false"
+      aria-label="Turn ambient sound on"
+      title="Sound off"
+    >
+      <span class="sound-toggle__icon" aria-hidden="true"></span>
+    </button>
+
+    <footer class="footer">
+      made by
+      <a href="https://andresma.com" rel="noopener noreferrer">Andrés Arbelaez</a>
+    </footer>
+
+    <script src="./grass.js" defer></script>
+  </body>
+</html>
