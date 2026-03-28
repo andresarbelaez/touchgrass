@@ -2,8 +2,8 @@
 
 Satirical, calming microsite for AI builders who need a break. Concept ties to cognitive overload and “always-on” tooling described in [Pablo Stanley’s “Fried”](https://www.linkedin.com/pulse/fried-pablo-stanley-h4uvf/) (AI brain fry, air-traffic-control mode, FOMO around agents). The joke: the cure for being too online is a little more online—but make it nature.
 
-**Target URL:** `https://touchgrass.vercel.app`  
-**Vercel project name:** `touchgrass` (claim by naming the project this on first deploy)
+**Production URL:** `https://go-touchgrass.vercel.app`  
+**Vercel project name:** `touchgrass` (dashboard name; the `.vercel.app` hostname is **`go-touchgrass`** because `touchgrass.vercel.app` was unavailable)
 
 ---
 
@@ -78,7 +78,7 @@ For touchgrass, treat the FX poster as a **background plate**; typography stays 
 1. **Base art** — Top-down grass read: **gradient / shapes / image / video** layer via FX MCP (`set_background`, optional `add_layer`), original art only.
 2. **Grade in FX** — **`apply_effect`** (+ post-process only when the chosen effect allows it).
 3. **Render to repo** — **`render_image`** via MCP → save as **`public/meadow-fx.png`**; commit when happy.
-4. **Design** — Design MCP + app: full-bleed **`<img>` / `bg-cover`** → `https://touchgrass.vercel.app/meadow-fx.png` or upload until deployed.
+4. **Design** — Design MCP + app: full-bleed **`<img>` / `bg-cover`** → `https://go-touchgrass.vercel.app/meadow-fx.png` (or current test asset `…/pipeline-test-fx.png`) or upload until deployed.
 5. **Ship** — Design **Publish** and/or this repo on Vercel; document the real path in *Implementation decisions*.
 
 ### What to implement next (engineering order)
@@ -159,7 +159,7 @@ Use the app for anything that’s product-native:
 | Priority | Action |
 |----------|--------|
 | 1 | **Primary build surface:** Efecto (web) + MCP from Cursor for iterations—so Pablo’s tool is where the page lives day to day. |
-| 2 | **Primary deploy path:** Use Efecto’s **GitHub → Vercel** (or equivalent) flow so `touchgrass.vercel.app` traces back to that pipeline. Name the Vercel project `touchgrass`. |
+| 2 | **Primary deploy path:** Use Efecto’s **GitHub → Vercel** (or equivalent) flow so **`go-touchgrass.vercel.app`** traces back to that pipeline. Vercel project name: `touchgrass`. |
 | 3 | **Field look:** **FX MCP** → `public/meadow-fx.png`; optional motion later in repo or Design. |
 | 4 | **Receipts (optional):** Screenshot or short screen recording of the Efecto canvas / MCP session if you ever want to show process—not required for the DM, but it backs up the story. |
 
@@ -219,7 +219,7 @@ touchgrass/
 └── .gitignore
 ```
 
-*(FX output must be **reachable by URL** for Efecto Design `<img>`—easiest: same repo on Vercel.)*
+*(FX output must be **reachable by URL** for Efecto Design `<img>`—e.g. `https://go-touchgrass.vercel.app/pipeline-test-fx.png` or `…/meadow-fx.png` after deploy.)*
 
 ---
 
@@ -231,7 +231,7 @@ touchgrass/
 4. **Repo parity** — Point `index.html` / CSS at the same asset; trim or keep `grass.js` (audio only vs full meadow).
 5. **Audio** — Opt-in wind; unchanged rules.
 6. **Polish** — OG image, favicon, contrast on pixel bg.
-7. **Deploy** — Vercel project `touchgrass`; Design publish if used.
+7. **Deploy** — Vercel project `touchgrass`; production URL **`https://go-touchgrass.vercel.app`**; Design publish if used.
 8. **Outreach** — Pablo DM; accurate line about **Design + FX (MCP)**.
 
 ---
@@ -239,7 +239,7 @@ touchgrass/
 ## Open questions (from brief + follow-up)
 
 - **FX:** Exact `effectId` / post-process stack for “Game Boy–ish but original”—iterate against [Effects](https://efecto.app/docs/fx/effects) and [Post-processing](https://efecto.app/docs/fx/postprocess).
-- **Image URL in Design:** First iteration may need **upload** or **ngrok/temporary host** until `touchgrass.vercel.app` serves `public/meadow-fx.png`.
+- **Image URL in Design:** Use **`https://go-touchgrass.vercel.app/…`** for deployed assets (`pipeline-test-fx.png`, later `meadow-fx.png`); upload only if you iterate before push.
 - Ambient audio: CC0 / licensed loops vs procedural wind; licensing unchanged.
 - **Day/night:** still out of scope unless it stays one static FX frame.
 
@@ -255,10 +255,10 @@ touchgrass/
 
 ## Pablo DM (after launch)
 
-> Hey Pablo — made something for AI builders who need a break from their IDE. Built the layout in Efecto Design, built the scene with Efecto FX (MCP), deployed on Vercel: [link]
+> Hey Pablo — made something for AI builders who need a break from their IDE. Built the layout in Efecto Design, built the scene with Efecto FX (MCP), deployed on Vercel: https://go-touchgrass.vercel.app/
 
 *(Adjust wording to match what you actually shipped—keep claims aligned with *Efecto Design + Efecto FX* section above.)*
 
 ---
 
-*Last updated: FX path uses **FX MCP** primary; FX HTTP API documented as optional fallback.*
+*Last updated: production URL **go-touchgrass.vercel.app**; FX MCP primary; FX HTTP API optional fallback.*
