@@ -209,13 +209,12 @@ Proposed once build starts (adjust to match stack choice):
 ```text
 touchgrass/
 ├── PLANNING.md
-├── index.html           # shell: type, footer, sound; bg from FX asset
+├── index.html           # full-bleed FX img + copy + footer + sound
+├── pipeline-test-fx.png # current FX plate (swap when `meadow-fx.png` ships)
 ├── styles.css
-├── grass.js             # optional: audio + future motion; or slim to audio-only
-├── public/
-│   ├── meadow-fx.png    # output of FX MCP render_image (name TBD)
-│   └── audio/           # optional later
-├── scripts/             # optional: only if you add API fallback (curl/Node)
+├── grass.js             # opt-in wind audio only
+├── public/              # `.gitkeep`; future `meadow-fx.png` / audio here if preferred
+├── scripts/             # optional: FX API fallback
 └── .gitignore
 ```
 
