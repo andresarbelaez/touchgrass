@@ -78,7 +78,7 @@ For touchgrass, treat the FX poster as a **background plate**; typography stays 
 1. **Base art** — Top-down grass read: **gradient / shapes / image / video** layer via FX MCP (`set_background`, optional `add_layer`), original art only.
 2. **Grade in FX** — **`apply_effect`** (+ post-process only when the chosen effect allows it).
 3. **Render to repo** — **`render_image`** via MCP → save as **`public/meadow-fx.png`**; commit when happy.
-4. **Design** — Design MCP + app: full-bleed **`<img>` / `bg-cover`** → `https://go-touchgrass.vercel.app/meadow-fx.png` (or current test asset `…/pipeline-test-fx.png`) or upload until deployed.
+4. **Design** — Design MCP + app: full-bleed **`<img>` / `bg-cover`** → `https://go-touchgrass.vercel.app/meadow-fx.png` or upload until deployed.
 5. **Ship** — Design **Publish** and/or this repo on Vercel; document the real path in *Implementation decisions*.
 
 ### What to implement next (engineering order)
@@ -210,7 +210,7 @@ Proposed once build starts (adjust to match stack choice):
 touchgrass/
 ├── PLANNING.md
 ├── index.html           # full-bleed FX img + copy + footer + sound
-├── pipeline-test-fx.png # current FX plate (swap when `meadow-fx.png` ships)
+├── meadow-fx.png        # FX MCP plate (Game Boy dither, top-down field + path)
 ├── styles.css
 ├── grass.js             # opt-in wind audio only
 ├── public/              # `.gitkeep`; future `meadow-fx.png` / audio here if preferred
@@ -218,7 +218,7 @@ touchgrass/
 └── .gitignore
 ```
 
-*(FX output must be **reachable by URL** for Efecto Design `<img>`—e.g. `https://go-touchgrass.vercel.app/pipeline-test-fx.png` or `…/meadow-fx.png` after deploy.)*
+*(FX output must be **reachable by URL** for Efecto Design `<img>`—e.g. `https://go-touchgrass.vercel.app/meadow-fx.png`.)*
 
 ---
 
@@ -230,7 +230,7 @@ touchgrass/
 4. **Repo parity** — Point `index.html` / CSS at the same asset; trim or keep `grass.js` (audio only vs full meadow).
 5. **Audio** — Opt-in wind; unchanged rules.
 6. **Polish** — OG image, favicon, contrast on pixel bg.
-7. **Deploy** — Vercel project `touchgrass`; production URL **`https://go-touchgrass.vercel.app`**; Design publish if used.
+7. **Deploy** — Vercel project `touchgrass`; production URL **`https://go-touchgrass.vercel.app`**; **`vercel.json`** sets **`outputDirectory": "."`** so the site root (where `index.html` lives) is deployed—if this is wrong, Vercel may only publish an empty `public/` folder and return **404 NOT_FOUND**.
 8. **Outreach** — Pablo DM; accurate line about **Design + FX (MCP)**.
 
 ---
@@ -238,7 +238,7 @@ touchgrass/
 ## Open questions (from brief + follow-up)
 
 - **FX:** Exact `effectId` / post-process stack for “Game Boy–ish but original”—iterate against [Effects](https://efecto.app/docs/fx/effects) and [Post-processing](https://efecto.app/docs/fx/postprocess).
-- **Image URL in Design:** Use **`https://go-touchgrass.vercel.app/…`** for deployed assets (`pipeline-test-fx.png`, later `meadow-fx.png`); upload only if you iterate before push.
+- **Image URL in Design:** Use **`https://go-touchgrass.vercel.app/meadow-fx.png`** for the deployed plate; upload only if you iterate before push.
 - Ambient audio: CC0 / licensed loops vs procedural wind; licensing unchanged.
 - **Day/night:** still out of scope unless it stays one static FX frame.
 
